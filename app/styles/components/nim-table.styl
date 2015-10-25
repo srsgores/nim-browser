@@ -1,0 +1,47 @@
+/*
+nim-browser
+
+nim-table.styl
+
+Author: Sean
+
+Created on 2015-05-25 by PhpStorm
+*/
+
+$nimTableHeaderBackgroundColour ?= #C10101
+$nimTableVisitedLinkColour ?= #a62dc9
+$nimTableHeaderColour ?= dark($nimTableHeaderBackgroundColour) ? white:black
+$nimTablePadding ?= 1em
+$nimTableBorder ?= 1px solid #CCC
+$nimTableContainerPadding ?= 1em
+$nimTableContainerMargin ?= 1em
+$nimTableContainerMaxWidth ?= 70em
+
+.nim-table
+
+	caption
+		text-align right
+		margin-bottom 1em
+		font-style italic
+		font-size 1.2em
+	&-container
+		padding $nimTableContainerPadding
+		margin $nimTableContainerMargin auto
+		max-width $nimTableContainerMaxWidth
+	th
+		transition 0.4s ease background, 0.4s ease opacity
+		opacity 0.8
+		&:hover
+			opacity 1
+		font-weight bold
+		background $nimTableHeaderBackgroundColour
+		color $nimTableHeaderColour
+		text-align left
+	th, td
+		a
+			color $nimTableHeaderBackgroundColour
+			font-weight bold
+			&:visited
+				color $nimTableVisitedLinkColour
+		padding $nimTablePadding
+		border $nimTableBorder

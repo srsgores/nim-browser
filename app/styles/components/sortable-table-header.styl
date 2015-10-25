@@ -1,0 +1,26 @@
+/*
+	nim-browser
+
+	sortable-table-header.styl
+
+	Author: Sean
+
+	Created on 2015-05-25 by PhpStorm
+*/
+
+$ascendingSymbol ?= "&#8593;"
+
+$descendingSymbol ?= "&#8595;"
+
+$defaultSymbol ?= "&#8597;"
+
+.sortable
+	&-header
+		&:after
+			content $defaultSymbol
+		&.ascending
+			&:after
+				content $ascendingSymbol
+		&.descending
+			&:after
+				content $descendingSymbol

@@ -1,0 +1,28 @@
+/*
+nim-browser
+
+app.styl
+
+Author: Sean
+
+Created on 2015-05-25 by PhpStorm
+*/
+$bannerBackgroundColour ?= #C10101
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400)
+
+@import "helpers/reset"
+
+@import "components/*"
+
+.banner
+	padding 4em
+	box-sizing border-box
+	color dark($bannerBackgroundColour) ? white:black
+	background $bannerBackgroundColour
+	&-title
+		line-height 2
+		font-size 2em
+body
+	background white
+	font-family Roboto, sans-serif

@@ -1,0 +1,34 @@
+{{#if packages.length}}
+	<table summary="List of all nim packages" class="nim-table">
+		<caption>List of all nim packages</caption>
+		<thead>
+			<tr class="sortable-row" data-sort-by="{{sortingProperty}}">
+				<th {{action "sortBy" "name"}} class="sortable-header" id="name">Name</th>
+				<th {{action "sortBy" "description"}} class="sortable-header" id="description">Description</th>
+				<th {{action "sortBy" "web"}} class="sortable-header" id="url">URL</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each sortedPackages as |package|}}
+				<tr>
+					<td>
+						{{#if package.web}}
+							<a href="{{package.web}}" title="{{package.name}} - {{package.description}}" target="_blank">{{package.name}}</a>
+						{{else}}
+							{{package.name}}
+						{{/if}}
+					</td>
+					<td><p>{{package.description}}</p></td>
+					<td>{{package.web}}</td>
+				</tr>
+			{{else}}
+				<tr>
+					<td colspan="2"><p class="error">No packages found.  Something went wrong.</p></td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+{{/if}}
+
+
+{{yield}}
